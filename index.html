@@ -8,7 +8,41 @@
 <html>
 <body>
 
+<head>
+  <meta charset="UTF-8">
+  <title>cool people counter</title>
   <style>
+    .counter-box {
+      text-align: right;
+      padding: 20px;
+      font-family: courier;
+    }
+    .counter-number {
+      font-size: 48px;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-box">
+    <p>Page views:</p>
+    <span class="counter-number" id="count">0</span>
+  </div>
+
+  <script>
+    let count = localStorage.getItem('page_view');
+    if (count) {
+      count = Number(count) + 1;
+    } else {
+      count = 1;
+    }
+    localStorage.setItem('page_view', count);
+    document.getElementById('count').innerText = count;
+  </script>
+</body>
+  <style>
+    
 body {
   background-image: url('background_image_dotted.png');
 }
@@ -27,11 +61,12 @@ body {
 <p style="font-family:courier;">i'm currently working on an album. it's a mix between alternative rock and electronica or something like that. i'm confused about the genre.</p>
 <h1 style="font-family:courier;">here are a couple of songs from it:</p>
 
+<p style="font-family:courier;">"headache"</p>
   <audio src="headache.mp3" controls></audio>
-  <p style="font-family:courier;">↑ "headache"</p>
 
+  <p style="font-family:courier;">"tin can" (my favourite so far) </p>
   <audio src="tin_can.mp3" controls></audio>
-  <p style="font-family:courier;">↑ "tin can" (my favourite so far) </p>
+
 
 
 
